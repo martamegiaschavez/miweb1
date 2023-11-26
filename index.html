@@ -3,15 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPT</title>
+    <title>Mi Sitio Web</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>Mi Sitio Web</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#acerca-de-mi">Acerca de mí</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
     <div id="chat-container">
         <div id="chat-box"></div>
         <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
         <button onclick="sendMessage()">Enviar</button>
     </div>
+
+    <section id="inicio">
+        <h2>Inicio</h2>
+        <p>Bienvenido a mi sitio web. Aquí encontrarás...</p>
+    </section>
+
+    <section id="acerca-de-mi">
+        <h2>Acerca de mí</h2>
+        <p>Hola, soy [Tu Nombre]. Me encanta...</p>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Puedes contactarme a través de...</p>
+    </section>
+
     <script src="script.js"></script>
 </body>
 </html>
+
