@@ -122,5 +122,25 @@ body {
     button {
       width: 100%;
     }
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+#politicas {
+  text-align: center;
+}
+
+#politicas a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#politicas a:hover {
+  color: #ddd;
+}
+
+      
   }
   
