@@ -1,0 +1,52 @@
+<xml font-family="helvetica" width="595" height="842" margin-bottom="20" left-margin="30" fontsize="16">
+  <header>
+    <block background-color="#F7D96D" id="BloqueHeader">
+      <text background-color="#F7D96D">¡Soy el header!</text>
+    </block>
+  </header>
+
+  <document>
+    <br/>
+
+    <!--Meter una imagen en nuestra plantilla-->
+    <field position="center" font="image" src="G2L.jpg" width="150" height="290"></field>
+    <!--
+        - En el src introducimos el nombre de la imagen o su ruta junto a su nombre
+          es mejor tener siempre la imagen cerca de nuestro xml para así no liarnos
+          con la ruta-->
+    <br/>
+    <text position="left" fontsize="12"> Nombre
+    </text>
+    <field id="Nom usuario"  position="rigth">
+    </field>
+    <br/>
+    <text position="left" fontsize="12"> N/S móv
+    </text>
+    <field id="N/S móvil" position="center">
+    </field>
+    <br/>
+    <text position="left" fontsize="12"> SIM
+    </text>
+    <field id="SIM" position="center">
+    </field>
+    <br/>
+    <block id="bloque1">
+      <text position="left" fontsize="12"> Código caib
+      </text>
+      <field id="Código caib" position="center">
+      </field>
+    </block>
+    <text position="left" fontsize="12"> Comentario
+    </text>
+    <field id="Notas" position="left">
+    </field>
+
+  </document>
+
+<!--Crear una footer - Un footer es el cuadro final de página - el footer siempre estará dentro de su etiqueta y siempre
+    deberá de haber en nuestra plantilla la etiqueta <document></document> -->
+<footer>
+<text fontsize="10" font="italic" position="center">¡Soy el footer!</text>
+</footer>
+
+</xml>
