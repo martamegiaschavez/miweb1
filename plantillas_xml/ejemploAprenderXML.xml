@@ -1,0 +1,260 @@
+<!--Hola a todos, esto de aquí es un comentario.
+  Antes de empezar os dejo aquí los links a nuestros tutoriales.
+  http://blog.gladtolink.com/2019/07/09/plantillas-dinamicas-con-xml-2/
+  http://blog.gladtolink.com/2019/02/14/plantillas-xml-listas/
+  http://blog.gladtolink.com/2018/10/09/plantillas-xml-diseno-de-pagina/
+  http://blog.gladtolink.com/2018/10/01/plantillas-xml-tablas/
+  http://blog.gladtolink.com/2018/10/01/plantillas-xml-diseno-del-texto/-->
+
+  <!--Para los colores os dejo aquí un enlace a una web que va bastante bien
+      https://htmlcolorcodes.com/es/  -->
+
+
+<!--Vamos a comenzar!! -->
+<!-- Primero de todo la etiquet xml junto a sus atributos: -->
+
+<xml font-family="helvetica" width="595" height="842" margin-bottom="20" left-margin="30" fontsize="16">
+  <!--
+    - font-family para poner el tipo de letra
+    - width para poner el ancho de la página(el folio)
+    - height para poner el largo de la página(el folio)
+    - margin-bottom y left-margin para poner margenes a la página(el folio)
+    - fontsize es para poner el tamaño al texto-->
+
+  <document>
+    <!-- Escribir texto y al lado su campo-->
+    <text>Nombre: </text>
+    <field id="Nombre"></field>
+
+
+    <text position="center">Apellido: </text>
+    <field  position="center" id="Apellido"></field>
+
+  <br/>
+
+    <text position="right" font="bold">Fecha: </text>
+    <field  position="right" font="italic" id="Fecha"></field>
+
+
+  <br/>
+
+    <text position="center" font="bold" fontsize="18" color="#11ADF7" >Hora: </text>
+    <field  position="center" fontsize="18" color="#11ADF7" id="hora"></field>
+
+    <!--Recordad que :
+                  - Position es para elegir la posición y puede ser "center", "right" y "left".
+                  - Font es para poner si queremos la letra en "bold"(negrita),"italic"(cursiva) y "underline"(subrayado).
+                  - Fontsize es para indicar el tamaño de la letra. Arriba en la etiqueta xml ya habíamos declarado un
+                    fontsize por defecto pero el de aquí solo hará efecto al elemento de esta etiqueta.
+                  - Color inidca el color del texto,su código HEX
+                  - Font=bool es para poner un booleano es decir un Si/No (un check)
+                  - id es para crear la identificación del campo-->
+
+    <br/>
+
+    <!--Meter una imagen en nuestra plantilla-->
+    <field position="center" font="image" src="G2L.jpg" width="150" height="290"></field>
+    <!--
+        - En el src introducimos el nombre de la imagen o su ruta junto a su nombre
+          es mejor tener siempre la imagen cerca de nuestro xml para así no liarnos
+          con la ruta-->
+    <br/>
+
+    <!--Crear un bloque (los bloques se usan para realizar acciones dinámicas gracias a sus id)
+        Escribir texto, a su lado el campo y hacer un salto de linea-->
+    <block id="Primer bloque">
+      <text position="center" font="bold" fontsize="18" color="#925959" >Nombre</text>
+      <field  position="center" fontsize="18" color="#925959" id="Nombre"></field>
+      <br/>
+      <text position="center" font="bold" fontsize="18" color="#BBCF4D" >Apellido</text>
+      <field  position="center" fontsize="18" color="#BBCF4D" id="Apellido"></field>
+      <br/>
+      <text position="center" font="bold" fontsize="18" color="#614DCF" >Fecha</text>
+      <field  position="center" fontsize="18" color="#614DCF" id="Fecha"></field>
+      <br/>
+      <text position="center" font="bold" fontsize="18" color="#11ADF7" >CampoCheck</text>
+      <field  position="center" font="bool" fontsize="18" color="#11ADF7" id="CampoCheck"></field>
+      <br/>
+      <text position="center" font="bold" fontsize="18" color="#CF4DC1" >Hora:</text>
+      <field  position="center" fontsize="18" color="#CF4DC1" id="Hora"></field>
+      <br/>
+    </block>
+
+  <br/>
+
+      <!--Crear una tabla dentro de un bloque-->
+      <block id="Primera_tabla">
+        <table columns="4">
+          <row border="1">
+            <cell>
+              <text>1 celda</text>
+            </cell>
+            <cell>
+                <field id="1 celda"></field>
+            </cell>
+            <cell>
+                <text>2 celda</text>
+            </cell>
+            <cell>
+                <field id="2 celda"></field>
+            </cell>
+          </row>
+        </table>
+      </block>
+
+  <br/>
+
+  <!--Crear una tabla con colores en las celdas-->
+  <block id="Color_fondo">
+    <table columns="4">
+      <row border="1">
+        <cell background-color="#2BCDEA">
+          <text>1 celda</text>
+        </cell>
+        <cell background-color="#F7D96D">
+            <field id="1 celda"></field>
+        </cell>
+        <cell background-color="#2BCDEA">
+            <text>2 celda</text>
+        </cell>
+        <cell background-color="#F7D96D">
+            <field id="2 celda"></field>
+        </cell>
+      </row>
+    </table>
+  </block>
+    <!--background-color es el atributo que hace que se cambie de color el fondo-->
+
+  <br/>
+
+  <!--Crear una tabla sin bordes-->
+  <block id="Sin_borde">
+    <table border ="0" columns="4">
+      <row border="1">
+        <cell>
+          <text>1 celda</text>
+        </cell>
+        <cell>
+            <field id="1 celda"></field>
+        </cell>
+        <cell>
+            <text>2 celda</text>
+        </cell>
+        <cell>
+            <field id="2 celda"></field>
+        </cell>
+      </row>
+    </table>
+  </block>
+
+<br/>
+
+  <!--Crear una tabla con mucho borde-->
+  <block id="Con_mucho_borde">
+    <table border ="2" columns="4">
+      <row border="1">
+        <cell>
+          <text>1 celda</text>
+        </cell>
+        <cell>
+            <field id="1 celda"></field>
+        </cell>
+        <cell>
+            <text>2 celda</text>
+        </cell>
+        <cell>
+            <field id="2 celda"></field>
+        </cell>
+      </row>
+    </table>
+  </block>
+
+  <br/>
+
+      <!--Crear una tabla dentro de un bloque con atributos-->
+      <block id="Quinto bloque">
+        <table columns="4" border="1">
+          <row>
+            <cell padding="8">
+              <text position="left" font="bold" fontsize="18">1 celda</text>
+            </cell>
+            <cell padding="2">
+                <field  position="center" fontsize="18" id="1 celda"></field>
+            </cell>
+            <cell>
+                <text indent="5" position="left" font="bold" fontsize="18" >2 celda</text>
+            </cell>
+            <cell>
+                <field  position="right" fontsize="18" id="2 celda"></field>
+            </cell>
+          </row>
+          <row>
+            <cell colspan="2">
+              <text position="left">Celda expandida</text>
+            </cell>
+            <cell colspan="2">
+                <field  position="left" id="celda expandida"></field>
+            </cell>
+          </row>
+        </table>
+      </block>
+      <!--
+          - Border, hace que el borde de la tabla sea más gordo al igual que si pusieramos 0 sería transparente.
+          - Padding, hace que las celdas no opriman tanto al texto y tenga más espacio hacia todos los lados.
+          - Indent, hace que haya un espacio antes de la palabra, como si se le pusier auna sangría.
+          - Colspan, hace que esa celda ocupe más celdas.-->
+
+    <br/>
+<new-page/>
+<!--Crear una tabla dentro de otra tabla-->
+<block id="Tabla_en_Tabla">
+<table margin-top="15" columns="12">
+    <row>
+      <cell colspan="2">
+        <text font="bold" position="left">Una Columna</text>
+      </cell>
+      <cell colspan="10">
+        <table columns="7" >
+          <row>
+            <cell border="0" padding="6" colspan="7">
+              <text font="bold" position="left">Comentario</text>
+            </cell>
+          </row>
+          <row>
+            <cell border="0" padding="6" colspan="7">
+              <field position="left" id="Comentario"></field>
+            </cell>
+          </row>
+          <row>
+            <cell border="0" padding="6" colspan="7">
+              <text font="bold" position="right">Signed </text>
+              <field position="right" id="Signed..."></field>
+            </cell>
+          </row>
+          <row>
+            <cell border="0" padding="6" colspan="7">
+              <text font="bold" position="right">Date </text>
+              <field position="right" id="Date..."></field>
+            </cell>
+          </row>
+        </table>
+      </cell>
+    </row>
+  </table>
+</block>
+
+<!--Crear una header - Un header es un encabezamiento de página - el header siempre estará dentro de su etiqueta y siempre
+    deberá de haber en nuestra plantilla la etiqueta <document></document> -->
+<header>
+  <block background-color="#F7D96D" id="BloqueHeader">
+    <text background-color="#F7D96D">¡Soy el header!</text>
+  </block>
+</header>
+
+<!--Crear una footer - Un footer es el cuadro final de página - el footer siempre estará dentro de su etiqueta y siempre
+    deberá de haber en nuestra plantilla la etiqueta <document></document> -->
+    <footer>
+      <text fontsize="10" font="italic" position="center">¡Soy el footer!</text>
+    </footer>
+  </document>
+</xml>
