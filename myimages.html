@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Página con Imágenes</title>
-        <style>
-            img {
-                max-width: 300px;
-                height: auto;
+    <style>
+            .image-container {
+                width: 100%;
+                max-width: 300px; /* Ancho máximo deseado */
+                margin: 0 auto; /* Centrar el contenedor */
+                overflow: hidden; /* Evitar desbordamiento en caso de imágenes muy grandes */
             }
-        </style>
+    
+            .image-container img {
+                width: 100%; /* Hacer que la imagen llene el contenedor */
+                height: auto;
+                display: block; /* Eliminar espacio adicional debajo de la imagen */
+            }
+    </style>
 </head>
 <body>
 
     <h1>Mi Página con Imágenes</h1>
 
     <!-- Referencia a una imagen en el directorio 'images' -->
-    <img src="images/TEC-rpa-with-blurry-hand-touching-screen_0.png" alt="TEC-rpa pequeña">
-    <img src="images/TEC-rpa-with-blurry-hand-touching-screen_1.png" alt="TEC-rpa mediana">
-    <img src="images/TEC-rpa-with-blurry-hand-touching-screen_2.png" alt="TEC-rpa grande">
-    <img src="images/G2L.jpg" alt="logo G2L">
+    <div class="image-container">
+        <img src="images/TEC-rpa-with-blurry-hand-touching-screen_2.png" alt="TEC-rpa pequeña">
+    </div>
+    <div class="image-container">
+        <img src="images/G2L.jpg" alt="logo G2L">
+    </div>
+    
 </body>
 </html>
