@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página con Imágenes</title>
-     <style>
+    <title>Página con Cuadrícula de Imágenes</title>
+        <style>
+            .image-grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+    
             .image-container {
-                width: 100%;
-                max-width: 300px; /* Ancho máximo deseado */
-                margin: 0 auto;
+                width: calc(33.33% - 20px); /* Ancho del contenedor de imagen con espacio entre columnas */
+                margin: 10px;
                 overflow: hidden;
             }
     
@@ -16,13 +21,15 @@
                 width: 100%;
                 height: auto;
                 display: block;
-                transform: rotate(0deg); /* Rotación para asegurar orientación horizontal */
+                transform: rotate(0deg);
             }
-        </style>
+         </style>
 </head>
 <body>
 
-    <h1>Mi Página con Imágenes</h1>
+    <<h1>Página con Cuadrícula de Imágenes</h1>
+
+    <div class="image-grid">
 
     <!-- Referencia a una imagen en el directorio 'images' -->
     <div class="image-container">
@@ -30,6 +37,10 @@
     </div>
     <div class="image-container">
         <img src="images/G2L.jpg" alt="logo G2L">
+    </div>
+
+    <!-- Puedes agregar más imágenes y contenedores aquí -->
+
     </div>
     
 </body>
